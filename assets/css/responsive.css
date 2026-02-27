@@ -1828,11 +1828,19 @@
     .labto-mobile-nav .logo {
         position: relative;
         z-index: 9910;
-        width: 60%;
+        /* let the container size itself to the image rather than forcing 60% width */
+        width: auto;
         left: 15px;
+        text-align: center; /* center contents */
     }
     .labto-mobile-nav .logo a {
         display: inline-block;
+    }
+    .labto-mobile-nav .logo img {
+        max-width: 120px; /* limit logo size on small screens */
+        height: auto;
+        display: block;
+        margin: 0 auto;
     }
     .labto-mobile-nav.mean-container .mean-nav .navbar-nav {
         height: 351px;
