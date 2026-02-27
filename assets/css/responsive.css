@@ -1836,12 +1836,12 @@
     .labto-mobile-nav .logo a {
         display: inline-block;
     }
+    /* hide the logo entirely on mobile devices as requested */
+    .labto-mobile-nav .logo,
     .labto-mobile-nav .logo img {
-        max-width: 120px; /* limit logo size on small screens */
-        height: auto;
-        display: block;
-        margin: 0 auto;
+        display: none;
     }
+    /* if you ever want to show it again, remove the above rule or add a new one */
     .labto-mobile-nav.mean-container .mean-nav .navbar-nav {
         height: 351px;
         overflow-y: scroll;
