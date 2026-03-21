@@ -47,6 +47,9 @@
         top: 8px;
         margin-top: -6px;
     }
+    .box_50 {
+        width: 100% !important;
+    }
     .main-banner {
         padding-top: 155px;
         padding-bottom: 85px;
@@ -210,17 +213,41 @@
         -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.02);
         box-shadow: 0 0 6px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.02);
         padding: 20px;
+        float: none !important;
+        clear: both;
+        display: block;
+        text-align: center;
     }
     .single-services-box h3 {
         font-size: 16px;
+        float: none !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 8px !important;
+    }
+    .single-services-box p {
+        float: none !important;
+        width: 100% !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
     }
     .single-services-box .icon {
         width: 65px;
         height: 65px;
         line-height: 65px;
+        margin: 0 auto 15px !important;
+        display: block !important;
+        inline-block: none;
     }
     .single-services-box .icon i::before {
         font-size: 30px;
+    }
+    .single-services-box .learn-more-btn {
+        float: none !important;
+        width: 100% !important;
+        clear: both;
+        display: block;
+        margin-top: 10px !important;
     }
     .services-box {
         -webkit-box-shadow: 0 0 6px rgba(0, 0, 0, 0.08), 0 10px 10px rgba(0, 0, 0, 0.02);

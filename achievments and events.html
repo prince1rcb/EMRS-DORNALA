@@ -277,7 +277,7 @@
 
                         <!-- MIS Login -->
                           <li class="nav-item">
-                            <a href="undercons.html" class="nav-link">MIS Login</a>
+                            <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;">MIS Login</a>
                         </li>
 
                     </ul>
@@ -322,49 +322,9 @@
             <!-- inline styles removed, custom classes unused -->
 <!-- ================= EVENT SECTION START ================= -->
 
-<div class="container mt-5">
-    <div class="row g-4">
-
-        <!-- Event 1 -->
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="event-card" onclick="openEvent(1)">
-                <img src="WriteReadData/MD32145/cultural dance.jpg" class="event-img">
-                <h5 class="event-title">
-                   Cultural Dance Activity – Celebrating Our Tribal Heritage
-                </h5>
-            </div>
-        </div>
-
-        <!-- Event 2 -->
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="event-card" onclick="openEvent(2)">
-                <img src="WriteReadData/MD32145/UNITY  DAY.jpg" class="event-img">
-                <h5 class="event-title">
-                   National Unity Day – Strengthening the Spirit of Ek Bharat
-                </h5>
-            </div>
-        </div>
-
-        <!-- Event 3 -->
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="event-card" onclick="openEvent(3)">
-                <img src="WriteReadData/MD32145/Plantation.jpg" class="event-img">
-                <h5 class="event-title">
-                    Plantation Drive – Nurturing Nature, Securing the Future
-                </h5>
-            </div>
-        </div>
-
-        <!-- Event 4 -->
-        <div class="col-lg-3 col-md-4 col-sm-6">
-            <div class="event-card" onclick="openEvent(4)">
-                <img src="WriteReadData/MD32145/acheivements.jpg" class="event-img">
-                <h5 class="event-title">
-                    Educational Visit to ISRO – Inspiring Scientific Temper
-                </h5>
-            </div>
-        </div>
-
+<div class="container mt-5" id="events-container">
+    <div class="row g-4" id="dynamic-events-list">
+        <div class="col-12"><p>Loading events...</p></div>
     </div>
 </div>
 
@@ -372,14 +332,21 @@
 
 <div id="eventModal" class="custom-modal">
     <div class="modal-content-box">
-        <span class="close-btn" onclick="closeEvent()">&times;</span>
+        <span class="close-btn" onclick="hideEventModal()">&times;</span>
         <h3 id="modalTitle"></h3>
-        <img id="modalImage" class="modal-img">
+        <img id="modalImage" class="modal-img" alt="Event image">
         <p id="modalDescription"></p>
     </div>
 </div>
-
-<!-- ================= CSS ================= -->
+<script src="assets/js/api-content.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderEventList('dynamic-events-list');
+  });
+  document.getElementById('eventModal').addEventListener('click', (e) => {
+    if (e.target.id === 'eventModal') hideEventModal();
+  });
+</script>
 
 <style>
 
@@ -462,85 +429,6 @@
 </style>
 
 <!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-function openEvent(id) {
-
-    const events = {
-
-        1: {
-            title: "Cultural Dance Activity – Celebrating Our Tribal Heritage",
-            image: "WriteReadData/MD32145/cultural dance.jpg",
-            description: `The Cultural Dance Activity at EMRS Dornala, Prakasam District, Andhra Pradesh serves as a vibrant platform to preserve, promote, and celebrate India’s rich tribal and traditional heritage. Our students enthusiastically participate in various traditional and folk dance forms that reflect the values, history, and cultural identity of our communities.
-
-Through this activity, students not only showcase their artistic talents but also develop confidence, teamwork, discipline, and leadership skills. The performances are organized during national festivals, annual day celebrations, tribal cultural events, and special government programs, highlighting the spirit of unity in diversity.
-
-The Cultural Dance program at EMRS Dornala aims to:
-
-• Preserve and promote tribal art forms
-
-• Encourage student creativity and self-expression
-
-• Strengthen cultural awareness and pride
-
-• Provide opportunities for inter-school and district-level participation
-
-Under the guidance of dedicated faculty members, students receive structured training that blends traditional authenticity with modern presentation techniques.
-
-At EMRS Dornala, cultural dance is not just an activity—it is a celebration of identity, heritage, and unity.`
-        },
-
-        2: {
-            title: "National Unity Day – Strengthening the Spirit of Ek Bharat",
-            image: "WriteReadData/MD32145/UNITY  DAY.jpg",
-            description: `EMRS Dornala proudly observes National Unity Day (Rashtriya Ekta Diwas) on the birth anniversary of Sardar Vallabhbhai Patel, honoring his invaluable contribution to national integration.
-
-The celebration includes the Unity Pledge, awareness rallies, cultural programs, and speeches highlighting the importance of unity, integrity, and national harmony. Students actively participate in discussions and activities that promote the values of brotherhood, discipline, and collective responsibility.
-
-Through this observance, EMRS Dornala reinforces the message of “Ek Bharat, Shreshtha Bharat” and nurtures responsible citizens committed to the unity and progress of our nation.`
-        },
-
-        3: {
-            title: "Plantation Drive – Nurturing Nature, Securing the Future",
-            image: "WriteReadData/MD32145/Plantation.jpg",
-            description: `As part of its commitment to environmental sustainability, EMRS Dornala organizes regular Plantation Drives within the campus and surrounding community areas.
-
-Students, teachers, and staff actively participate in planting saplings, spreading awareness about climate conservation, and promoting eco-friendly practices. The initiative aims to instill environmental responsibility, encourage green living, and contribute to a healthier ecosystem.
-
-The plantation activity reflects the institution’s dedication to sustainable development and aligns with national environmental missions promoting a greener India.`
-        },
-
-        4: {
-            title: "Educational Visit to ISRO – Inspiring Scientific Temper",
-            image: "WriteReadData/MD32145/acheivements.jpg",
-            description: `Students of EMRS Dornala had the valuable opportunity to visit the prestigious Indian Space Research Organisation (ISRO), India’s premier space agency.
-
-The educational visit provided students with firsthand exposure to space science, satellite technology, and India’s remarkable achievements in space exploration. The interaction with scientists and technical experts inspired curiosity, innovation, and a deeper interest in STEM education.
-
-Through such experiential learning programs, EMRS Dornala strives to cultivate scientific temper, critical thinking, and ambition among students, empowering them to dream big and contribute to the nation’s technological advancement.`
-        }
-
-    };
-
-    document.getElementById("modalTitle").innerText = events[id].title;
-    document.getElementById("modalImage").src = events[id].image;
-    document.getElementById("modalDescription").innerText = events[id].description;
-
-    document.getElementById("eventModal").style.display = "block";
-    /* prevent background from scrolling while modal open */
-    document.body.style.overflow = 'hidden';
-}
-
-function closeEvent() {
-    document.getElementById("eventModal").style.display = "none";
-    /* restore body scrolling */
-    document.body.style.overflow = '';
-}
-
-// single closeEvent definition below
-
-</script>
 
 <!-- ================= EVENT SECTION END ================= -->
 
@@ -887,6 +775,7 @@ $.ajax({
 
         </div>
     </div>
+<script src="assets/js/visitor-counter.js"></script>
 </body>
 </html>
 

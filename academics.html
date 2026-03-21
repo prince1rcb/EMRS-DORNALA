@@ -306,10 +306,9 @@
                         </li>
 
                         <!-- MIS Login -->
-                           <li class="nav-item">
-                            <a href="undercons.html" class="nav-link">MIS Login</a>
+                        <li class="nav-item">
+                            <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;">MIS Login</a>
                         </li>
-
                     </ul>
                 </div>
 
@@ -562,6 +561,9 @@ button
 .calendar-table {
     width: 100%;
     border-collapse: collapse;
+    border: 1px solid #d7deea;
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .calendar-table th {
@@ -569,15 +571,36 @@ button
     color: #ffffff;
     padding: 14px;
     font-weight: 600;
+    border: 1px solid #17385d;
+    text-align: left;
 }
 
 .calendar-table td {
-    padding: 12px;
-    border-bottom: 1px solid #e0e0e0;
+    padding: 12px 14px;
+    border: 1px solid #e0e6ef;
 }
 
-.calendar-table tr:hover {
+.calendar-table tbody tr:nth-child(odd) {
+    background: #ffffff;
+}
+
+.calendar-table tbody tr:nth-child(even) {
+    background: #f3f7fc;
+}
+
+.calendar-table tbody tr:hover {
     background: #f4f8ff;
+}
+
+@media (max-width: 768px) {
+    .premium-calendar {
+        padding: 20px;
+    }
+    .calendar-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 }
 </style>
 <section class="premium-academic">
@@ -717,45 +740,30 @@ structured practice sessions are organized for meritorious students.
 <h3>Academic Calendar (2025-26)</h3>
 
 <table class="calendar-table">
-<tr>
-<th>Month</th>
-<th>Activity</th>
-<th>Details</th>
-</tr>
-
-<tr>
-<td>April</td>
-<td>Session Commencement</td>
-<td>New academic year begins for all classes</td>
-</tr>
-
-<tr>
-<td>June</td>
-<td>Unit Test - I</td>
-<td>Periodic assessment for academic progress</td>
-</tr>
-
-<tr>
-<td>September</td>
-<td>Half-Yearly Examination</td>
-<td>Comprehensive mid-term evaluation</td>
-</tr>
-
-<tr>
-<td>December</td>
-<td>Pre-Board Examination</td>
-<td>Preparation assessment for Class X & XII</td>
-</tr>
-
-<tr>
-<td>March</td>
-<td>Annual Examination</td>
-<td>Final academic evaluation</td>
-</tr>
+<thead>
+    <tr>
+        <th>Month</th>
+        <th>Activity</th>
+        <th>Details</th>
+    </tr>
+</thead>
+<tbody id="dynamic-academic-calendar-body">
+    <tr><td colspan="3">Loading calendar...</td></tr>
+</tbody>
 
 </table>
 
 </div>
+
+<script src="assets/js/api-content.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        renderAcademicCalendar('dynamic-academic-calendar-body');
+        setInterval(() => {
+            renderAcademicCalendar('dynamic-academic-calendar-body');
+        }, 10000);
+    });
+</script>
 
                </div>
         
@@ -1169,6 +1177,7 @@ $.ajax({
 
         </div>
     </div>
+<script src="assets/js/visitor-counter.js"></script>
 </body>
 </html>
 

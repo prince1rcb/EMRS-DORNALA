@@ -315,9 +315,8 @@
 
                         <!-- MIS Login -->
                         <li class="nav-item">
-                            <a href="undercons.html" class="nav-link">MIS Login</a>
+                            <a href="admin-login.html" class="nav-link" style="color:#d13b3b;font-weight:600;">MIS Login</a>
                         </li>
-
 
                     </ul>
                 </div>
@@ -393,7 +392,7 @@
 
 .staff-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 30px;
 }
 
@@ -409,6 +408,7 @@
 
 .staff-card:hover {
     transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.11);
 }
 
 .staff-img {
@@ -442,6 +442,31 @@
 .staff-contact {
     font-size: 13px;
     margin-top: 8px;
+    color: #2b3c55;
+}
+
+.staff-department {
+    color: #4b5e77;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 1199px) {
+    .staff-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 991px) {
+    .staff-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 575px) {
+    .staff-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
 <section class="staff-section">
@@ -452,75 +477,17 @@
     <p>Academic & Administrative Personnel</p>
 </div>
 
-<div class="staff-grid">
+<div class="staff-grid" id="dynamic-staff-grid"></div>
 
-<!-- Principal -->
-<div class="staff-card">
-    <img src="principal.jpg" alt="Principal" class="staff-img">
-    <h5>Dr. A. Kumar</h5>
-    <div class="staff-role">Principal</div>
-    <p>M.A., B.Ed., Ph.D</p>
-    <div class="staff-contact">
-        Email: principal@school.gov.in
-    </div>
-</div>
-
-<!-- Vice Principal -->
-<div class="staff-card">
-    <img src="viceprincipal.jpg" alt="Vice Principal" class="staff-img">
-    <h5>Mrs. S. Reddy</h5>
-    <div class="staff-role">Vice Principal</div>
-    <p>M.Sc., B.Ed</p>
-    <div class="staff-contact">
-        Email: vp@school.gov.in
-    </div>
-</div>
-
-<!-- PGT Physics -->
-<div class="staff-card">
-    <img src="teacher1.jpg" alt="PGT Physics" class="staff-img">
-    <h5>Mr. R. Sharma</h5>
-    <div class="staff-role">PGT – Physics</div>
-    <p>M.Sc Physics, B.Ed</p>
-    <div class="staff-contact">
-        Dept: Science
-    </div>
-</div>
-
-<!-- TGT English -->
-<div class="staff-card">
-    <img src="teacher2.jpg" alt="TGT English" class="staff-img">
-    <h5>Ms. P. Lakshmi</h5>
-    <div class="staff-role">TGT – English</div>
-    <p>M.A English, B.Ed</p>
-    <div class="staff-contact">
-        Dept: Languages
-    </div>
-</div>
-
-<!-- PGT Mathematics -->
-<div class="staff-card">
-    <img src="teacher3.jpg" alt="PGT Mathematics" class="staff-img">
-    <h5>Mr. V. Rao</h5>
-    <div class="staff-role">PGT – Mathematics</div>
-    <p>M.Sc Mathematics, B.Ed</p>
-    <div class="staff-contact">
-        Dept: Science
-    </div>
-</div>
-
-<!-- Office Superintendent -->
-<div class="staff-card">
-    <img src="admin.jpg" alt="Office Superintendent" class="staff-img">
-    <h5>Mr. K. Naidu</h5>
-    <div class="staff-role">Office Superintendent</div>
-    <p>Administrative Head</p>
-    <div class="staff-contact">
-        Office Administration
-    </div>
-</div>
-
-</div>
+<script src="assets/js/api-content.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    renderStaffCards('dynamic-staff-grid');
+        setInterval(() => {
+            renderStaffCards('dynamic-staff-grid');
+        }, 10000);
+  });
+</script>
 
 </div>
 </section>
@@ -936,6 +903,7 @@ $.ajax({
 
         </div>
     </div>
+<script src="assets/js/visitor-counter.js"></script>
 </body>
 </html>
 
