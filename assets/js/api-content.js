@@ -1,6 +1,6 @@
 // ================= CONFIG =================
-const API_BASE = 'http://localhost:8000/api';
-const BASE_URL = 'http://127.0.0.1:8000';
+const API_BASE = "https://emrs-dornala-1.onrender.com";
+const BASE_URL = "https://emrs-dornala-1.onrender.com";
 
 
 // ================= IMAGE URL FIX =================
