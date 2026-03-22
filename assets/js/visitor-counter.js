@@ -1,6 +1,6 @@
 // Visitor Counter Module
 const visitorCounter = {
-  API_BASE: 'https://emrs-dornala-1.onrender.com',
+  API_BASE: 'https://emrs-dornala-1.onrender.com', // Production deployment on Render
 
   // Initialize visitor counter on page load
   init: async function() {

@@ -1,11 +1,6 @@
 // ================= CONFIG =================
-<<<<<<< HEAD
 const API_BASE = 'https://emrs-dornala-1.onrender.com/api';
 const BASE_URL = 'https://emrs-dornala-1.onrender.com';
-=======
-const API_BASE = "https://emrs-dornala-1.onrender.com";
-const BASE_URL = "https://emrs-dornala-1.onrender.com";
->>>>>>> a3d29576b4125b97169788ca45ade7d969afe588
 
 
 // ================= IMAGE URL FIX =================
