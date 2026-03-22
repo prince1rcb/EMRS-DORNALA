@@ -6,3 +6,7 @@ passlib[bcrypt]==1.7.4
 pydantic==1.10.14
 python-multipart==0.0.6
 python-dotenv==1.0.0
+<<<<<<< HEAD
+=======
+bcrypt==4.0.1
+>>>>>>> a3d29576b4125b97169788ca45ade7d969afe588

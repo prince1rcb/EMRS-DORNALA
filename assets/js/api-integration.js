@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 const emrsBaseURL = "https://emrs-dornala-1.onrender.com/api";
+=======
+const emrsBaseURL = "https://emrs-dornala-1.onrender.com";
+>>>>>>> a3d29576b4125b97169788ca45ade7d969afe588
 
 async function fetchAnnouncements() {
   const response = await fetch(`${emrsBaseURL}/announcements`);
