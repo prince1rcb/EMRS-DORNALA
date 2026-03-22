@@ -1,6 +1,6 @@
 // Visitor Counter Module
 const visitorCounter = {
-  API_BASE: 'http://127.0.0.1:8000', // Change to your domain when deployed
+  API_BASE: 'https://emrs-dornala-1.onrender.com',
 
   // Initialize visitor counter on page load
   init: async function() {
