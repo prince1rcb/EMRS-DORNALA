@@ -47,7 +47,7 @@ async def startup_event():
         from app.utils.security import get_password_hash
         await db.admins.insert_one({
             "username": "admin",
-            "password": get_password_hash("Admin@123"),
+            "password": get_password_hash("Admin@123".strip()),
             "role": "admin",
         })
 
